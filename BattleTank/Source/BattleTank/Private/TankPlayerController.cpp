@@ -17,11 +17,30 @@ void ATankPlayerController::BeginPlay()
 	}	
 }
 
+// Called every frame
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick( DeltaTime );
+	AimTowardsCrosshair();
+}
+
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn());
 }
 
+void ATankPlayerController::AimTowardsCrosshair()
+{
+	if(!GetControlledTank())
+	{
+		UE_LOG(LogTemp, Error, TEXT("TankPlayerController not possesing a tank."));
+		return;
+	}
+
+	// Aiming code here
+	
+	return;
+}
 
 
 
