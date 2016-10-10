@@ -27,3 +27,9 @@ void UTankMovementComponent::IntendTurnRight(float Throw)
 
 	//TODO prevent double speed when using direct track controlls and intend at the same time
 }
+
+void UTankMovementComponent::RequestDirectMove(const FVector& MoveVelocity, bool bForceMaxSpeed)
+{
+	auto Name = GetOwner()->GetName();
+	UE_LOG(LogTemp, Warning, TEXT("%s Request Direct Move: %s"), *Name, *(MoveVelocity.ToString()))
+}

@@ -24,9 +24,9 @@ void ATankAIController::AimTowardsPlayer()
 	if (PlayerTank)
 	{
 		// Move towards player tank
+		MoveToActor(PlayerTank, AcceptanceRadius);
 		
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
 		ControlledTank->Fire(); // TODO limit firing rate
 	}
 }
-

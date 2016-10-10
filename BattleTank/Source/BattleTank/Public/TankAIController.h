@@ -18,4 +18,7 @@ private:
 	virtual void Tick(float) override;
 
 	void AimTowardsPlayer();
+
+	// How close can the AI tank get to the player
+	float AcceptanceRadius = 3000.0f;
 };
