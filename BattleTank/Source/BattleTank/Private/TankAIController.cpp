@@ -27,6 +27,9 @@ void ATankAIController::AimTowardsPlayer()
 	MoveToActor(PlayerTank, AcceptanceRadius);
 		
 	AimingComponent->AimAt(PlayerTank->GetActorLocation());
-	AimingComponent->Fire(); // TODO limit firing rate
-	
+
+	if (AimingComponent->GetFiringState() == EFiringState::Locked)
+	{
+		AimingComponent->Fire(); // TODO limit firing rate
+	}
 }
