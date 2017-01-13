@@ -30,6 +30,6 @@ void ATankAIController::AimTowardsPlayer()
 
 	if (AimingComponent->GetFiringState() == EFiringState::Locked)
 	{
-		AimingComponent->Fire(); // TODO limit firing rate
+		AimingComponent->Fire();
 	}
 }
