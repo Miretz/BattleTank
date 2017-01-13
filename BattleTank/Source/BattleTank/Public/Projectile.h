@@ -1,4 +1,5 @@
 // Copyright Miretz 2016
+
 #pragma once
 
 #include "GameFramework/Actor.h"
