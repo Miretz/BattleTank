@@ -1,5 +1,4 @@
 // Copyright Miretz 2016
-
 #pragma once
 
 #include "GameFramework/Actor.h"
@@ -23,6 +22,13 @@ public:
 	void LaunchProjectile(float Speed);
 
 private:
-	UProjectileMovementComponent* ProjectileMovement = nullptr;
 	
+	UProjectileMovementComponent* ProjectileMovement = nullptr;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UStaticMeshComponent* CollisionMesh;
+
+	UPROPERTY(VisibleAnywhere, Category = "Components")
+	UParticleSystemComponent* LaunchBlast;
+
 };
