@@ -21,7 +21,12 @@ private:
 
 	virtual void BeginPlay() override;
 
+	virtual void SetPawn(APawn* InPawn) override;
+
 	virtual void Tick(float) override;
+
+	UFUNCTION()
+	void OnTankDeath();
 
 	void AimTowardsCrosshair();
 
