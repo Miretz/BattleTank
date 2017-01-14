@@ -32,11 +32,14 @@ void ATankAIController::Tick(float DeltaTime)
 
 void ATankAIController::OnTankDeath()
 {
+	if (!GetPawn()) { return; }
 	GetPawn()->DetachFromControllerPendingDestroy();
 }
 
 void ATankAIController::AimTowardsPlayer()
 {
+	if (!GetPawn()) { return; }
+
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
 
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
