@@ -3,7 +3,6 @@
 #include "BattleTank.h"
 #include "Tank.h"
 
-// Sets default values
 ATank::ATank()
 {
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
@@ -23,5 +22,10 @@ float ATank::TakeDamage(float DamageAmount, FDamageEvent const & DamageEvent, AC
 	}
 	
 	return DamageToApply;
+}
+
+float ATank::GetHealthPercent() const
+{
+	return (float) CurrentHealth / (float) StartingHealth;
 }
 
