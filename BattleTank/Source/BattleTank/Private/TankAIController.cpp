@@ -43,7 +43,7 @@ void ATankAIController::AimTowardsPlayer()
 	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
 
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
-	if (!ensure(AimingComponent) || !ensure(PlayerTank)) { return; }
+	if (!PlayerTank || !AimingComponent) { return; }
 
 	// Move towards player tank
 	MoveToActor(PlayerTank, AcceptanceRadius);
